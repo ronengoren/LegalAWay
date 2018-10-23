@@ -4,6 +4,7 @@
 target 'LegalAWy' do
     rn_path = '../node_modules/react-native'
     rn_maps_path = '../node_modules/react-native-maps'
+    folly_spec_path = File.join(rn_path, 'third-party-podspecs/Folly.podspec')
 
     pod 'yoga', path: "#{rn_path}/ReactCommon/yoga/yoga.podspec"
     pod 'React', path: rn_path, subspecs: [
@@ -20,6 +21,7 @@ target 'LegalAWy' do
         'RCTText',
         'RCTVibration',
         'RCTWebSocket',
+        'DevSupport'
 
         # Add any other subspecs you want to use in your project
       ]
@@ -30,7 +32,7 @@ target 'LegalAWy' do
       # "The name of the given podspec `GLog` doesn't match the expected one `glog`"
       # Use the following line instead:
       #pod 'GLog', :podspec => "#{rn_path}/third-party-podspecs/GLog.podspec"
-      pod 'Folly', :podspec => "#{rn_path}/third-party-podspecs/Folly.podspec"
+      pod 'Folly', podspec: folly_spec_path
       pod 'react-native-maps', path: rn_maps_path
       pod 'react-native-google-maps', path: rn_maps_path  # Unomment this line if you want to support GoogleMaps on iOS
       pod 'GoogleMaps'  # Uncomment this line if you want to support GoogleMaps on iOS
