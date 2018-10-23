@@ -15,10 +15,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  [GMSServices provideAPIKey:@"AIzaSyBHu5GCJWf4J6p03jgBXMWY_Od1BEtyU90"]; // add this line using the api key obtained from Google Console
+
   NSURL *jsCodeLocation;
 
   jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
-  [GMSServices provideAPIKey:@"AIzaSyBHu5GCJWf4J6p03jgBXMWY_Od1BEtyU90"]; // add this line using the api key obtained from Google Console
 
 
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation

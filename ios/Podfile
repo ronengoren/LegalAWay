@@ -26,7 +26,9 @@ target 'LegalAWy' do
         # Add any other subspecs you want to use in your project
       ]
 
-      pod 'DoubleConversion', :podspec => "#{rn_path}/third-party-podspecs/DoubleConversion.podspec"
+      pod 'DoubleConversion', 
+      :podspec => "../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec",
+      :inhibit_warnings => true
       pod 'glog', :podspec => "#{rn_path}/third-party-podspecs/glog.podspec"
       # If you are using React Native <0.54, you will get the following error:
       # "The name of the given podspec `GLog` doesn't match the expected one `glog`"

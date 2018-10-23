@@ -2,9 +2,9 @@ import React from "react";
 import { View, Text } from "react-native";
 // import { Actions } from "react-native-router-flux";
 
-// import { Container }  from "native-base";
+import { Container }  from "native-base";
 
-// import MapContainer from "./MapContainer";
+import MapContainer from "./MapContainer";
 // import HeaderComponent from "../../../components/HeaderComponent";
 // import FooterComponent from "../../../components/FooterComponent";
 // import Fare from "./Fare";
@@ -15,36 +15,38 @@ import { View, Text } from "react-native";
 
 class Home extends React.Component {
 
-    // 	componentDidMount() {
-    // 		var rx = this;
+    	componentDidMount() {
+    		var rx = this;
     // 		this.props.getCurrentLocation();
     // 		setTimeout(function(){
     // 			rx.props.getNearByDrivers();
 
     // 		}, 1000);
-    // 	}
+    	// }
     // 	componentDidUpdate(prevProps, prevState) {
     //         if (this.props.booking.status === "confirmed" ){
     //             Actions.trackDriver({type: "reset"});
     //         }
     //         this.props.getCurrentLocation();
-    // 	}
+    	}
 
     render() {
+        const region = {
+    		latitude:3.146642,
+    		longitude:101.695845,
+    		latitudeDelta:0.0922,
+			longitudeDelta:0.0421
+    		}
+
         return (
-            <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-                <Text>Hello World</Text>
-            </View>
+            <Container style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+                <MapContainer region={region}/>
+            </Container>
         )
 
 
     }
-    // 		const region = {
-    // 			latitude:3.146642,
-    // 			longitude:101.695845,
-    // 			latitudeDelta:0.0922,
-    // 			longitudeDelta:0.0421
-    // 		}
+    
     // 		const { status } = this.props.booking;
     // 		return(
     // 			<Container>
