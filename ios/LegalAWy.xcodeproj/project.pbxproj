@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -58,6 +59,8 @@
 		877744872180225E005A4C26 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 877744522180225E005A4C26 /* EvilIcons.ttf */; };
 		877744882180225E005A4C26 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 877744532180225E005A4C26 /* SimpleLineIcons.ttf */; };
 		877744892180225E005A4C26 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 877744542180225E005A4C26 /* MaterialIcons.ttf */; };
+		8777451E2180282A005A4C26 /* RNVectorIconsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 877744F02180282A005A4C26 /* RNVectorIconsManager.m */; };
+		8777451F2180282A005A4C26 /* RCTFont+FA5.m in Sources */ = {isa = PBXBuildFile; fileRef = 877744F12180282A005A4C26 /* RCTFont+FA5.m */; };
 		90F1CE019F0E40D293C34830 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EE45347D0A0E461788784A3B /* FontAwesome.ttf */; };
 		95F710E1316E4E93BDFDA239 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6CF2363378344575A7BA80D0 /* MaterialIcons.ttf */; };
 		9E816FD69B544A53A13B7CB3 /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3D9BDDCF8C846598AD38475 /* FontAwesome5_Solid.ttf */; };
@@ -436,6 +439,11 @@
 		877744542180225E005A4C26 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
 		87774497218023F5005A4C26 /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
 		877744C62180242B005A4C26 /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
+		877744F02180282A005A4C26 /* RNVectorIconsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNVectorIconsManager.m; sourceTree = "<group>"; };
+		877744F12180282A005A4C26 /* RCTFont+FA5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RCTFont+FA5.m"; sourceTree = "<group>"; };
+		877744F22180282A005A4C26 /* RCTFont+FA5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RCTFont+FA5.h"; sourceTree = "<group>"; };
+		877744F32180282A005A4C26 /* RNVectorIconsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNVectorIconsManager.h; sourceTree = "<group>"; };
+		877745272180294B005A4C26 /* libGoogle-Maps-iOS-Utils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libGoogle-Maps-iOS-Utils.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		87FA577E217FAC540053714C /* AirMaps.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AirMaps.xcodeproj; path = "../node_modules/react-native-maps/lib/ios/AirMaps.xcodeproj"; sourceTree = "<group>"; };
 		9E02F029EAF0298B2CC379AC /* libPods-LegalAWy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LegalAWy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
@@ -621,6 +629,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				877745272180294B005A4C26 /* libGoogle-Maps-iOS-Utils.a */,
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
 				9E02F029EAF0298B2CC379AC /* libPods-LegalAWy.a */,
 			);
@@ -687,6 +696,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				877744EF2180282A005A4C26 /* RNVectorIconsManager */,
 				877744452180225E005A4C26 /* Fonts */,
 				13B07FAE1A68108700A75B9A /* LegalAWy */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
@@ -751,6 +761,17 @@
 				877744CE2180242B005A4C26 /* libRNVectorIcons-tvOS.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		877744EF2180282A005A4C26 /* RNVectorIconsManager */ = {
+			isa = PBXGroup;
+			children = (
+				877744F02180282A005A4C26 /* RNVectorIconsManager.m */,
+				877744F12180282A005A4C26 /* RCTFont+FA5.m */,
+				877744F22180282A005A4C26 /* RCTFont+FA5.h */,
+				877744F32180282A005A4C26 /* RNVectorIconsManager.h */,
+			);
+			path = RNVectorIconsManager;
 			sourceTree = "<group>";
 		};
 		87FA577F217FAC540053714C /* Products */ = {
@@ -1419,6 +1440,8 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				8777451E2180282A005A4C26 /* RNVectorIconsManager.m in Sources */,
+				8777451F2180282A005A4C26 /* RCTFont+FA5.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
