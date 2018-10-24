@@ -16,6 +16,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   [GMSServices provideAPIKey:@"AIzaSyBHu5GCJWf4J6p03jgBXMWY_Od1BEtyU90"]; // add this line using the api key obtained from Google Console
+  [GMSPlacesClient provideAPIKey:@"AIzaSyBHu5GCJWf4J6p03jgBXMWY_Od1BEtyU90"];
 
   NSURL *jsCodeLocation;
 

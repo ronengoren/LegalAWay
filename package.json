@@ -24,8 +24,8 @@
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
-    "flow-bin": "^0.83.0",
     "babel-jest": "23.6.0",
+    "flow-bin": "^0.83.0",
     "jest": "23.6.0",
     "metro-react-native-babel-preset": "0.48.1",
     "react-test-renderer": "16.6.0-alpha.8af6728",

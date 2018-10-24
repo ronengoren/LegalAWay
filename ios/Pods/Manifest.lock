@@ -27,6 +27,11 @@ PODS:
   - GoogleMaps/Base (2.5.0)
   - GoogleMaps/Maps (2.5.0):
     - GoogleMaps/Base
+  - GooglePlacePicker (2.5.0):
+    - GoogleMaps (= 2.5.0)
+    - GooglePlaces (= 2.5.0)
+  - GooglePlaces (2.5.0):
+    - GoogleMaps/Base (= 2.5.0)
   - React (0.57.3):
     - React/Core (= 0.57.3)
   - react-native-google-maps (0.22.0):
@@ -34,6 +39,8 @@ PODS:
     - GoogleMaps (= 2.5.0)
     - React
   - react-native-maps (0.22.0):
+    - React
+  - react-native-spinkit (1.0.2):
     - React
   - React/Core (0.57.3):
     - yoga (= 0.57.3.React)
@@ -80,6 +87,8 @@ PODS:
     - React/Core
     - React/fishhook
     - React/RCTBlob
+  - RNVectorIcons (6.0.2):
+    - React
   - yoga (0.57.3.React)
 
 DEPENDENCIES:
@@ -88,8 +97,10 @@ DEPENDENCIES:
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
   - Google-Maps-iOS-Utils
   - GoogleMaps
+  - GooglePlacePicker
   - react-native-google-maps (from `../node_modules/react-native-maps`)
   - react-native-maps (from `../node_modules/react-native-maps`)
+  - react-native-spinkit (from `../node_modules/react-native-spinkit`)
   - React/Core (from `../node_modules/react-native`)
   - React/CxxBridge (from `../node_modules/react-native`)
   - React/DevSupport (from `../node_modules/react-native`)
@@ -103,6 +114,7 @@ DEPENDENCIES:
   - React/RCTText (from `../node_modules/react-native`)
   - React/RCTVibration (from `../node_modules/react-native`)
   - React/RCTWebSocket (from `../node_modules/react-native`)
+  - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - yoga (from `../node_modules/react-native/ReactCommon/yoga/yoga.podspec`)
 
 SPEC REPOS:
@@ -110,6 +122,8 @@ SPEC REPOS:
     - boost-for-react-native
     - Google-Maps-iOS-Utils
     - GoogleMaps
+    - GooglePlacePicker
+    - GooglePlaces
 
 EXTERNAL SOURCES:
   DoubleConversion:
@@ -124,6 +138,10 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-maps"
   react-native-maps:
     :path: "../node_modules/react-native-maps"
+  react-native-spinkit:
+    :path: "../node_modules/react-native-spinkit"
+  RNVectorIcons:
+    :path: "../node_modules/react-native-vector-icons"
   yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga/yoga.podspec"
 
@@ -134,11 +152,15 @@ SPEC CHECKSUMS:
   glog: e8acf0ebbf99759d3ff18c86c292a5898282dcde
   Google-Maps-iOS-Utils: c32891ff472eaaa1fca032beedafa1a013af7875
   GoogleMaps: c087b8e5dfe87ca6ebf59adb9b4894a4146bec4f
+  GooglePlacePicker: 1573e644ab54564d95c2643edc0f29091609e966
+  GooglePlaces: dd70d9d71ea1c7944846afe67de3712c99b30a77
   React: 1fe0eb13d90b625d94c3b117c274dcfd2e760e11
   react-native-google-maps: b946d62e25dc66097921ed82520e45b0b081768a
   react-native-maps: 066c2afcc89e18726377bcc685315f989ca22449
+  react-native-spinkit: c9f5826e1a0bf0da889b3795278eb96ae15c1350
+  RNVectorIcons: 8c52e1e8da1153613fdef44748e865c25556cb9c
   yoga: b1ce48b6cf950b98deae82838f5173ea7cf89e85
 
-PODFILE CHECKSUM: ad1be0042ae35ccde160bc637fe416a3a5614eb7
+PODFILE CHECKSUM: da64f2e859d4a4bd0bc377c59954430a421b48cd
 
 COCOAPODS: 1.5.3
