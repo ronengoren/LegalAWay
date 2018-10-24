@@ -59,8 +59,6 @@
 		877744872180225E005A4C26 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 877744522180225E005A4C26 /* EvilIcons.ttf */; };
 		877744882180225E005A4C26 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 877744532180225E005A4C26 /* SimpleLineIcons.ttf */; };
 		877744892180225E005A4C26 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 877744542180225E005A4C26 /* MaterialIcons.ttf */; };
-		8777451E2180282A005A4C26 /* RNVectorIconsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 877744F02180282A005A4C26 /* RNVectorIconsManager.m */; };
-		8777451F2180282A005A4C26 /* RCTFont+FA5.m in Sources */ = {isa = PBXBuildFile; fileRef = 877744F12180282A005A4C26 /* RCTFont+FA5.m */; };
 		87E727C3218031F300F48CEC /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87E727C0218031D700F48CEC /* libRNVectorIcons.a */; };
 		87E72803218032AE00F48CEC /* libRNGooglePlaces.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8777458021802A29005A4C26 /* libRNGooglePlaces.a */; };
 		87E728142180333400F48CEC /* libPods-LegalAWy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87E728132180333400F48CEC /* libPods-LegalAWy.a */; };
@@ -436,10 +434,6 @@
 		877744522180225E005A4C26 /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EvilIcons.ttf; sourceTree = "<group>"; };
 		877744532180225E005A4C26 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SimpleLineIcons.ttf; sourceTree = "<group>"; };
 		877744542180225E005A4C26 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
-		877744F02180282A005A4C26 /* RNVectorIconsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNVectorIconsManager.m; sourceTree = "<group>"; };
-		877744F12180282A005A4C26 /* RCTFont+FA5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RCTFont+FA5.m"; sourceTree = "<group>"; };
-		877744F22180282A005A4C26 /* RCTFont+FA5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RCTFont+FA5.h"; sourceTree = "<group>"; };
-		877744F32180282A005A4C26 /* RNVectorIconsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNVectorIconsManager.h; sourceTree = "<group>"; };
 		877745272180294B005A4C26 /* libGoogle-Maps-iOS-Utils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libGoogle-Maps-iOS-Utils.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		87E727BA218031D700F48CEC /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = ../../../../.Trash/RNVectorIcons.xcodeproj; sourceTree = "<group>"; };
 		87E728132180333400F48CEC /* libPods-LegalAWy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-LegalAWy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -708,7 +702,6 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				877744EF2180282A005A4C26 /* RNVectorIconsManager */,
 				877744452180225E005A4C26 /* Fonts */,
 				13B07FAE1A68108700A75B9A /* LegalAWy */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
@@ -756,17 +749,6 @@
 			);
 			name = Fonts;
 			path = "../node_modules/react-native-vector-icons/Fonts";
-			sourceTree = "<group>";
-		};
-		877744EF2180282A005A4C26 /* RNVectorIconsManager */ = {
-			isa = PBXGroup;
-			children = (
-				877744F02180282A005A4C26 /* RNVectorIconsManager.m */,
-				877744F12180282A005A4C26 /* RCTFont+FA5.m */,
-				877744F22180282A005A4C26 /* RCTFont+FA5.h */,
-				877744F32180282A005A4C26 /* RNVectorIconsManager.h */,
-			);
-			path = RNVectorIconsManager;
 			sourceTree = "<group>";
 		};
 		8777455521802A27005A4C26 /* Recovered References */ = {
@@ -1487,8 +1469,6 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
-				8777451E2180282A005A4C26 /* RNVectorIconsManager.m in Sources */,
-				8777451F2180282A005A4C26 /* RCTFont+FA5.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
