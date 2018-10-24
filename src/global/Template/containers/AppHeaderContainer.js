@@ -4,7 +4,7 @@
 import { connect } from "react-redux"
 import AppHeader from "../components/AppHeader"
 
-const appLogo = require("../../../assets/images/taxi_logo_white.png")
+const appLogo = require("../../../assets/images/get_a_lawyer_logo.png")
 
 const mapStateToProps = state => ({
     logo: appLogo,
