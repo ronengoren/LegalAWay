@@ -62,6 +62,7 @@
 		8777451E2180282A005A4C26 /* RNVectorIconsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 877744F02180282A005A4C26 /* RNVectorIconsManager.m */; };
 		8777451F2180282A005A4C26 /* RCTFont+FA5.m in Sources */ = {isa = PBXBuildFile; fileRef = 877744F12180282A005A4C26 /* RCTFont+FA5.m */; };
 		87E727C3218031F300F48CEC /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87E727C0218031D700F48CEC /* libRNVectorIcons.a */; };
+		87E72803218032AE00F48CEC /* libRNGooglePlaces.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8777458021802A29005A4C26 /* libRNGooglePlaces.a */; };
 		90F1CE019F0E40D293C34830 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EE45347D0A0E461788784A3B /* FontAwesome.ttf */; };
 		95F710E1316E4E93BDFDA239 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6CF2363378344575A7BA80D0 /* MaterialIcons.ttf */; };
 		9E816FD69B544A53A13B7CB3 /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3D9BDDCF8C846598AD38475 /* FontAwesome5_Solid.ttf */; };
@@ -477,6 +478,7 @@
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				2A73C38A0DB93B6EDA3CA49B /* libPods-LegalAWy.a in Frameworks */,
 				AC6AF456916144F099474F0F /* libRNGooglePlaces.a in Frameworks */,
+				87E72803218032AE00F48CEC /* libRNGooglePlaces.a in Frameworks */,
 				87E727C3218031F300F48CEC /* libRNVectorIcons.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
