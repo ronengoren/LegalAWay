@@ -63,6 +63,9 @@
 		8777451F2180282A005A4C26 /* RCTFont+FA5.m in Sources */ = {isa = PBXBuildFile; fileRef = 877744F12180282A005A4C26 /* RCTFont+FA5.m */; };
 		87E727C3218031F300F48CEC /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87E727C0218031D700F48CEC /* libRNVectorIcons.a */; };
 		87E72803218032AE00F48CEC /* libRNGooglePlaces.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8777458021802A29005A4C26 /* libRNGooglePlaces.a */; };
+		87E728142180333400F48CEC /* libPods-LegalAWy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87E728132180333400F48CEC /* libPods-LegalAWy.a */; };
+		87E7283F2180334900F48CEC /* libreact-native-spinkit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87E7283E2180334900F48CEC /* libreact-native-spinkit.a */; };
+		87E728412180337000F48CEC /* libGoogle-Maps-iOS-Utils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87E728402180337000F48CEC /* libGoogle-Maps-iOS-Utils.a */; };
 		90F1CE019F0E40D293C34830 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EE45347D0A0E461788784A3B /* FontAwesome.ttf */; };
 		95F710E1316E4E93BDFDA239 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6CF2363378344575A7BA80D0 /* MaterialIcons.ttf */; };
 		9E816FD69B544A53A13B7CB3 /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3D9BDDCF8C846598AD38475 /* FontAwesome5_Solid.ttf */; };
@@ -439,6 +442,9 @@
 		877744F32180282A005A4C26 /* RNVectorIconsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNVectorIconsManager.h; sourceTree = "<group>"; };
 		877745272180294B005A4C26 /* libGoogle-Maps-iOS-Utils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libGoogle-Maps-iOS-Utils.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		87E727BA218031D700F48CEC /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = ../../../../.Trash/RNVectorIcons.xcodeproj; sourceTree = "<group>"; };
+		87E728132180333400F48CEC /* libPods-LegalAWy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-LegalAWy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		87E7283E2180334900F48CEC /* libreact-native-spinkit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libreact-native-spinkit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		87E728402180337000F48CEC /* libGoogle-Maps-iOS-Utils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libGoogle-Maps-iOS-Utils.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		87FA577E217FAC540053714C /* AirMaps.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AirMaps.xcodeproj; path = "../node_modules/react-native-maps/lib/ios/AirMaps.xcodeproj"; sourceTree = "<group>"; };
 		9E02F029EAF0298B2CC379AC /* libPods-LegalAWy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LegalAWy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
@@ -475,9 +481,12 @@
 				139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */,
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
+				87E728142180333400F48CEC /* libPods-LegalAWy.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				2A73C38A0DB93B6EDA3CA49B /* libPods-LegalAWy.a in Frameworks */,
 				AC6AF456916144F099474F0F /* libRNGooglePlaces.a in Frameworks */,
+				87E728412180337000F48CEC /* libGoogle-Maps-iOS-Utils.a in Frameworks */,
+				87E7283F2180334900F48CEC /* libreact-native-spinkit.a in Frameworks */,
 				87E72803218032AE00F48CEC /* libRNGooglePlaces.a in Frameworks */,
 				87E727C3218031F300F48CEC /* libRNVectorIcons.a in Frameworks */,
 			);
@@ -631,6 +640,9 @@
 				877745272180294B005A4C26 /* libGoogle-Maps-iOS-Utils.a */,
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
 				9E02F029EAF0298B2CC379AC /* libPods-LegalAWy.a */,
+				87E728132180333400F48CEC /* libPods-LegalAWy.a */,
+				87E7283E2180334900F48CEC /* libreact-native-spinkit.a */,
+				87E728402180337000F48CEC /* libGoogle-Maps-iOS-Utils.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
