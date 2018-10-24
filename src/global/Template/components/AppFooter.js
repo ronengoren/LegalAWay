@@ -35,7 +35,7 @@ export default class AppFooter extends Component {
         // Clone the styles so that customization will not impacted to template
         const elementStyle = { ...style }
         const tabIsActive = this.props.selectedTaxiType === tabInfo
-        elementStyle.color = tabIsActive ? "#FF5E3A" : "grey"
+        elementStyle.color = tabIsActive ? "#262626" : "grey"
 
         return elementStyle
     }

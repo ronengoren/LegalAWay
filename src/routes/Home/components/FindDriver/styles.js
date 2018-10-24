@@ -5,7 +5,7 @@ const { width } = Dimensions.get("window")
 const styles = {
     findDriverContainer: {
         flex: 1,
-        backgroundColor: "#FF5E3A",
+        backgroundColor: "#262626",
         justifyContent: "space-between",
         alignItems: "center"
     },

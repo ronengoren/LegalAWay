@@ -19,13 +19,13 @@ const styles = {
             height: 1,
             width: 0
         },
-        backgroundColor: "#FF5E3A"
+        backgroundColor: "#262626"
     },
     disabledState: {
-        backgroundColor: "#D7D7D7"
+        backgroundColor: "#262626"
     },
     activeState: {
-        backgroundColor: "#FF5E3A"
+        backgroundColor: "#262626"
     },
     text: {
         fontSize: 16,

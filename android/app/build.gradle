@@ -137,15 +137,15 @@ android {
 }
 
 dependencies {
-    compile project(':react-native-google-places')
-    implementation(project(':react-native-google-places')){
-          implementation group: 'com.google.android.gms', module: 'play-services-base'
-          implementation group: 'com.google.android.gms', module: 'play-services-places'
-          implementation group: 'com.google.android.gms', module: 'play-services-location'
-      }
-      implementation 'com.google.android.gms:play-services-base:11.6.2'
-      implementation 'com.google.android.gms:play-services-places:11.6.2'
-      implementation 'com.google.android.gms:play-services-location:11.6.2'
+    implementation project(':react-native-google-places')
+//    implementation(project(':react-native-google-places')){
+//          implementation group: 'com.google.android.gms', module: 'play-services-base'
+//          implementation group: 'com.google.android.gms', module: 'play-services-places'
+//          implementation group: 'com.google.android.gms', module: 'play-services-location'
+//      }
+//    implementation 'com.google.android.gms:play-services-base:11.6.2'
+//    implementation 'com.google.android.gms:play-services-places:11.6.2'
+//    implementation 'com.google.android.gms:play-services-location:11.6.2'
     implementation project(':react-native-google-places')
     implementation project(':react-native-vector-icons')
     implementation project(':react-native-spinkit')

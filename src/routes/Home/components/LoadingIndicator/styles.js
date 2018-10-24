@@ -10,7 +10,7 @@ const styles = {
         flexDirection: "column",
         justifyContent: "space-around",
         alignItems: "center",
-        backgroundColor: "#FF5E3A"
+        backgroundColor: "#262626"
     },
     text: {
         color: "white"

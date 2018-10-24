@@ -23,7 +23,7 @@ export default class AppHeader extends Component {
         if (this.props.appStillLoading || this.props.bookingInProgress) return null
 
         return (
-            <Header style={{ backgroundColor: "#FF5E3A" }}>
+            <Header style={{ backgroundColor: "#262626" }}>
                 <Left style={{ flex: 1 }}>
                     <Button transparent>
                         <Icon name="bars" style={styles.icon} />
