@@ -59,5 +59,6 @@ Home.propTypes = {
     mapRegion: PropTypes.object,
     bookingRecord: PropTypes.object,
     drivers: PropTypes.array,
-    taxiType: PropTypes.object
+    taxiType: PropTypes.object,
+    // getInputData: PropTypes.func.object
 }

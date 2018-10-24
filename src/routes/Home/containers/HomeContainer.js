@@ -8,7 +8,8 @@ import {
     setPickupLocation,
     setDropLocation,
     bookTaxi,
-    cancelBookingTaxi
+    cancelBookingTaxi,
+    getInputData
 } from "../modules/HomeActions"
 
 const mapStateToProps = state => ({
@@ -17,7 +18,8 @@ const mapStateToProps = state => ({
     dropoffLocation: state.home.dropoffLocation,
     bookingRecord: state.home.bookingRecord,
     drivers: state.home.drivers,
-    taxiType: state.template.selectedTaxiType
+    taxiType: state.template.selectedTaxiType,
+    inputData: state.home.inputData || {}
 })
 
 const mapDispatchToProps = {
@@ -25,7 +27,8 @@ const mapDispatchToProps = {
     setPickupLocation,
     setDropLocation,
     bookTaxi,
-    cancelBookingTaxi
+    cancelBookingTaxi,
+    getInputData
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home)

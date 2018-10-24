@@ -5,7 +5,8 @@ import {
     SET_PICK_UP_LOCATION,
     SET_DROP_OFF_LOCATION,
     SET_FARE_STRUCTURE,
-    BOOK_TAXI_REQUEST
+    BOOK_TAXI_REQUEST,
+    GET_INPUT
 } from "./HomeActions"
 import { getRegionFromCoordinates, taxiTypes } from "../../../global"
 
@@ -13,7 +14,19 @@ export const actionHandlers = {
     SET_PICK_UP_LOCATION: handleSetPickupLocation,
     SET_DROP_OFF_LOCATION: handleSetDropLocation,
     SET_FARE_STRUCTURE: handleSetFareStructure,
-    BOOK_TAXI_REQUEST: handleBookTaxiRequest
+    BOOK_TAXI_REQUEST: handleBookTaxiRequest,
+    GET_INPUT: handleGetInput
+}
+
+function handleGetInput(state, action) {
+    const { key, value } = action.payload
+    return update(state, {
+        inputData: {
+            [key]: {
+                $set: value
+            }
+        }
+    })
 }
 
 function handleSetPickupLocation(state, action) {

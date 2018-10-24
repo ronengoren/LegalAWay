@@ -8,11 +8,19 @@ export const SET_DROP_OFF_LOCATION = "SET_DROP_OFF_LOCATION"
 export const SET_FARE_STRUCTURE = "SET_FARE_STRUCTURE"
 export const BOOK_TAXI_REQUEST = "BOOK_TAXI_REQUEST"
 export const SET_LAWYER_TYPE = "SET_LAWYER_TYPE"
+export const GET_INPUT = "GET_INPUT"
 
 function setLawyerTypeAction(list) {
     return {
         type: SET_LAWYER_TYPE,
         payload: list
+    }
+}
+
+function getInputData(payload) {
+    return {
+        type: GET_INPUT,
+        payload
     }
 }
 

@@ -56,7 +56,7 @@ export default class MapContainer extends Component {
 	}
 
 	render() {
-		const { pickupLocation, dropoffLocation, taxiType } = this.props
+		const { pickupLocation, dropoffLocation, taxiType, getInputData } = this.props
 		const bookingDisabled =
 			pickupLocation == null ||
 			dropoffLocation == null ||
@@ -76,6 +76,7 @@ export default class MapContainer extends Component {
 					pickupLocation={pickupLocation}
 					setDropLocation={this.props.setDropLocation}
 					dropoffLocation={dropoffLocation}
+				// getInputData={this.getInputData}
 				/>
 				<SearchResults />
 				<Booking bookingDisabled={bookingDisabled} bookTaxi={this.props.bookTaxi} />
@@ -86,6 +87,7 @@ export default class MapContainer extends Component {
 
 MapContainer.propTypes = {
 	setPickupLocation: PropTypes.func.isRequired,
+	// getInputData: PropTypes.func.object,
 	bookTaxi: PropTypes.func.isRequired,
 	pickupLocation: PropTypes.object,
 	setDropLocation: PropTypes.func.isRequired,
