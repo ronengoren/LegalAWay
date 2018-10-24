@@ -1,81 +1,111 @@
-import React from "react";
-import { View } from "native-base";
-import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
+"use strict"
 
-// import SearchBox from "../SearchBox";
-// import SearchResults from "../SearchResults";
+import React, { Component } from "react"
+import { PropTypes } from "prop-types"
+import { Content } from "native-base"
+import MapView from "react-native-maps"
+import styles from "./styles"
+import { SearchBox } from "../SearchBox"
+import Booking from "../Booking"
+import { isLocationEquals, taxiTypes } from "../../../../global"
+import Icon from "react-native-vector-icons/MaterialCommunityIcons"
 
-import styles from "./MapContainerStyles.js";
+export default class MapContainer extends Component {
+	constructor(props) {
+		super(props)
+		this.state = {}
+	}
 
-export const MapContainer = ({ 
-		region
-		// getInputData,
-		// toggleSearchResultModal,
-		// getAddressPredictions,
-		// resultTypes,
-		// predictions,
-		// getSelectedAddress,
-		// selectedAddress,
-		// carMarker,
-		// nearByDrivers
-	})=>{
+	componentWillMount = () => {
+		// Resolve taxi icon as image for custom marker
+		taxiTypes.forEach(type => {
+			Icon.getImageSource(type.icon, 25, "orangered").then(image =>
+				this.setState({ ...this.state, [type.type]: image })
+			)
+		})
+	}
 
-	// const { selectedPickUp, selectedDropOff } = selectedAddress || {};
+	renderPickupMarker() {
+		const { pickupLocation } = this.props
+		if (pickupLocation == null) {
+			return null
+		}
+		return <MapView.Marker coordinate={pickupLocation} pinColor="green" />
+	}
 
-	return(
-		<View style={styles.container}>
-	
-     <MapView
-       provider={PROVIDER_GOOGLE} // remove if not using Google Maps
-       style={styles.map}
-       region={{
-         latitude: 37.78825,
-         longitude: -122.4324,
-         latitudeDelta: 0.015,
-         longitudeDelta: 0.0121,
-       }}
-     >
-     </MapView>
+	renderDropoffMarker() {
+		const { dropoffLocation } = this.props
+		if (dropoffLocation == null) {
+			return null
+		}
+		return <MapView.Marker coordinate={dropoffLocation} pinColor="orangered" />
+	}
 
-				{/* { selectedPickUp &&
-					<MapView.Marker
-						coordinate={{latitude:selectedPickUp.latitude, longitude:selectedPickUp.longitude}}
-						pinColor="green"
+	renderDriverMarkers() {
+		const { taxiType } = this.props
+		if (taxiType == null || this.state[taxiType.type] == null) {
+			return null
+		}
+		return this.props.drivers
+			.filter(driver => driver.taxiType === taxiType.type)
+			.map(driver => (
+				<MapView.Marker key={driver.id} coordinate={driver} image={this.state[taxiType.type]} />
+			))
+	}
 
-					/>	
-				}
-				{ selectedDropOff &&
-					<MapView.Marker
-						coordinate={{latitude:selectedDropOff.latitude, longitude:selectedDropOff.longitude}}
-						pinColor="blue"
-
-					/>	
-				}
-
-				{
-					nearByDrivers && nearByDrivers.map((marker, index)=>
-						<MapView.Marker
-							key={index}
-							coordinate={{latitude:marker.coordinate.coordinates[1], longitude:marker.coordinate.coordinates[0] }}
-							image={carMarker}
-						/>	
-					)
-				} */}
-
-
-			{/* </MapView>
-
-			<SearchBox 
-				getInputData={getInputData}
-				toggleSearchResultModal={toggleSearchResultModal}
-				getAddressPredictions={getAddressPredictions}
-				selectedAddress={selectedAddress}
-			/>
-			{ (resultTypes.pickUp || resultTypes.dropOff) &&
-			<SearchResults predictions={predictions} getSelectedAddress={getSelectedAddress}/>
-			} */}
-		</View>
-	)
+	render() {
+		const { pickupLocation, dropoffLocation, taxiType } = this.props
+		const bookingDisabled =
+			pickupLocation == null ||
+			dropoffLocation == null ||
+			isLocationEquals(pickupLocation, dropoffLocation)
+		return (
+			<Content contentContainerStyle={styles.container}>
+				<MapView
+					provider={MapView.PROVIDER_GOOGLE}
+					region={this.props.mapRegion}
+					style={styles.map}>
+					{this.renderPickupMarker()}
+					{this.renderDropoffMarker()}
+					{this.renderDriverMarkers()}
+				</MapView>
+				<SearchBox
+					setPickupLocation={this.props.setPickupLocation}
+					pickupLocation={pickupLocation}
+					setDropLocation={this.props.setDropLocation}
+					dropoffLocation={dropoffLocation}
+				/>
+				<Booking bookingDisabled={bookingDisabled} bookTaxi={this.props.bookTaxi} />
+			</Content>
+		)
+	}
 }
 
-export default MapContainer;
+MapContainer.propTypes = {
+	setPickupLocation: PropTypes.func.isRequired,
+	bookTaxi: PropTypes.func.isRequired,
+	pickupLocation: PropTypes.object,
+	setDropLocation: PropTypes.func.isRequired,
+	dropoffLocation: PropTypes.object,
+	mapRegion: PropTypes.shape({
+		latitude: PropTypes.number.isRequired,
+		longitude: PropTypes.number.isRequired,
+		latitudeDelta: PropTypes.number.isRequired,
+		longitudeDelta: PropTypes.number.isRequired
+	}),
+	drivers: PropTypes.arrayOf(
+		PropTypes.shape({
+			taxiType: PropTypes.string.isRequired,
+			latitude: PropTypes.number.isRequired,
+			longitude: PropTypes.number.isRequired
+		})
+	),
+	taxiType: PropTypes.shape({
+		type: PropTypes.string.isRequired,
+		icon: PropTypes.string.isRequired
+	})
+}
+
+MapContainer.defaultProps = {
+	drivers: []
+}

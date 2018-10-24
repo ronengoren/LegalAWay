@@ -1,13 +1,11 @@
-import { combineReducers } from "redux";
-import { HomeReducer } from "../routes/Home/modules/home";
-// import { TrackDriverReducer as trackDriver } from "../routes/TrackDriver/module/trackDriver";
+"use strict"
+
+import { combineReducers } from "redux"
+import { homeReducer } from "../routes/Home/modules/home"
+import { templateReducer } from "../global/Template/modules/template"
 
 export const makeRootReducer = () => {
-    return combineReducers({
-        HomeReducer
-        // ,
-        // trackDriver
-    });
+    return combineReducers({ home: homeReducer, template: templateReducer })
 }
 
-export default makeRootReducer;
+export default makeRootReducer

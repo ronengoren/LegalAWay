@@ -1,89 +1,63 @@
-import React from "react";
-import { View, Text } from "react-native";
-// import { Actions } from "react-native-router-flux";
 
-import { Container }  from "native-base";
+"use strict"
 
-import MapContainer from "./MapContainer";
-// import HeaderComponent from "../../../components/HeaderComponent";
-// import FooterComponent from "../../../components/FooterComponent";
-// import Fare from "./Fare";
-// import Fab from "./Fab";
-// import FindDriver from "./FindDriver";
-// const taxiLogo = require("../../../assets/img/taxi_logo_white.png");
-// const carMarker = require("../../../assets/img/carMarker.png");
+import React, { Component } from "react"
+import PropTypes from "prop-types"
+import { Text } from "react-native"
+import MapContainer from "./MapContainer"
+import { Container } from "native-base"
+import AppFooter from "../../../global/Template/containers/AppFooterContainer"
+import LoadingIndicator from "./LoadingIndicator"
+import FindDriver from "./FindDriver"
 
-class Home extends React.Component {
+export default class Home extends Component {
+    componentDidMount() {
+        this.props.getCurrentLocation()
+    }
 
-    	componentDidMount() {
-    		var rx = this;
-    // 		this.props.getCurrentLocation();
-    // 		setTimeout(function(){
-    // 			rx.props.getNearByDrivers();
-
-    // 		}, 1000);
-    	// }
-    // 	componentDidUpdate(prevProps, prevState) {
-    //         if (this.props.booking.status === "confirmed" ){
-    //             Actions.trackDriver({type: "reset"});
-    //         }
-    //         this.props.getCurrentLocation();
-    	}
-
-    render() {
-        const region = {
-    		latitude:3.146642,
-    		longitude:101.695845,
-    		latitudeDelta:0.0922,
-			longitudeDelta:0.0421
-    		}
-
+    renderHome() {
         return (
-            <Container style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-                <MapContainer region={region}/>
+            <Container>
+                <MapContainer {...this.props} />
+                <AppFooter />
             </Container>
         )
-
-
     }
-    
-    // 		const { status } = this.props.booking;
-    // 		return(
-    // 			<Container>
-    // 				{ (status !== "pending") &&
-    // 					<View style={{flex:1}}>
-    // 						<HeaderComponent logo={taxiLogo}/>
-    // 						{this.props.region.latitude &&
-    // 						<MapContainer region={this.props.region} 
-    // 							getInputData={this.props.getInputData}
-    // 							toggleSearchResultModal={this.props.toggleSearchResultModal}
-    // 							getAddressPredictions={this.props.getAddressPredictions}
-    // 							resultTypes={this.props.resultTypes}
-    // 							predictions={this.props.predictions}
-    // 							getSelectedAddress={this.props.getSelectedAddress}
-    // 							selectedAddress={this.props.selectedAddress}
-    // 							carMarker={carMarker}
-    // 							nearByDrivers={this.props.nearByDrivers}
-    // 						/>
-    // 						}
 
-    // 						<Fab onPressAction={()=>this.props.bookCar()}/>
-    // 						{
-    // 							this.props.fare &&
-    // 							<Fare fare={this.props.fare} />
-    // 						}
-    // 						<FooterComponent/>
+    renderLoading() {
+        return <LoadingIndicator />
+    }
 
-    // 					</View>
-    // 					||
-    // 					<FindDriver selectedAddress={this.props.selectedAddress}/>
-    // 				}
+    renderBookingRequest() {
+        return (
+            <FindDriver
+                bookingRecord={this.props.bookingRecord}
+                cancelBookingTaxi={this.props.cancelBookingTaxi}
+            />
+        )
+    }
 
-    // 			</Container>
-
-    // 		);
-
-    // 	}
+    render() {
+        if (this.props.bookingRecord) {
+            return this.renderBookingRequest()
+        }
+        if (this.props.mapRegion == null) {
+            return this.renderLoading()
+        }
+        return this.renderHome()
+    }
 }
 
-export default Home;
+Home.propTypes = {
+    getCurrentLocation: PropTypes.func.isRequired,
+    setPickupLocation: PropTypes.func.isRequired,
+    setDropLocation: PropTypes.func.isRequired,
+    bookTaxi: PropTypes.func.isRequired,
+    cancelBookingTaxi: PropTypes.func.isRequired,
+    pickupLocation: PropTypes.object,
+    dropoffLocation: PropTypes.object,
+    mapRegion: PropTypes.object,
+    bookingRecord: PropTypes.object,
+    drivers: PropTypes.array,
+    taxiType: PropTypes.object
+}
