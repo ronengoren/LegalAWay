@@ -6,6 +6,8 @@ import { Content } from "native-base"
 import MapView from "react-native-maps"
 import styles from "./styles"
 import { SearchBox } from "../SearchBox"
+import { SearchResults } from "../SearchResults"
+
 import Booking from "../Booking"
 import { isLocationEquals, taxiTypes } from "../../../../global"
 import Icon from "react-native-vector-icons/MaterialCommunityIcons"
@@ -75,6 +77,7 @@ export default class MapContainer extends Component {
 					setDropLocation={this.props.setDropLocation}
 					dropoffLocation={dropoffLocation}
 				/>
+				<SearchResults />
 				<Booking bookingDisabled={bookingDisabled} bookTaxi={this.props.bookTaxi} />
 			</Content>
 		)

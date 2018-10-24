@@ -5,5 +5,9 @@ export const urls = {
     distanceMatrix: (originLat, originLong, desLat, desLong) =>
         `https://maps.googleapis.com/maps/api/distancematrix/json?origins=${originLat},${originLong}&destinations=${desLat},${desLong}&key=${mapKey}`,
     mapDirection: (originLat, originLong, desLat, desLong) =>
-        `https://maps.googleapis.com/maps/api/directions/json?origins=${originLat},${originLong}&destinations=${desLat},${desLong}&key=${mapKey}`
+
+        `https://maps.googleapis.com/maps/api/directions/json?origins=${originLat},${originLong}&destinations=${desLat},${desLong}&key=${mapKey}`,
+    lawyersList: () =>
+        `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${originLat},${originLong}&radius=1500&type=lawyers&keyword=lawyer=${mapKey}`
+
 }

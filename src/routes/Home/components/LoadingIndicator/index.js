@@ -35,13 +35,13 @@ export default class LoadingIndicator extends Component {
         return (
             <View style={styles.container}>
                 <Image source={appLogo} />
-                {/* <Spinner
+                <Spinner
                     style={styles.spinner}
                     isVisible
                     size={150}
                     type="WanderingCubes"
                     color="#FFFFFF"
-                /> */}
+                />
                 <Text style={styles.text}>{message + messagePostfix}</Text>
             </View>
         )

@@ -20,6 +20,18 @@ export class SearchBox extends Component {
         this.pickALocation(latLngBounds, this.props.setPickupLocation)
     }
 
+    chooseLawyerType = () => {
+        const latLngBounds = {}
+        const { dropoffLocation } = this.props
+        if (dropoffLocation) {
+            latLngBounds.latitude = dropoffLocation.latitude
+            latLngBounds.longitude = dropoffLocation.longitude
+        }
+        this.pickALocation(latLngBounds, this.props.setDropLocation)
+    }
+
+
+
     chooseDropoffLocation = () => {
         const latLngBounds = {}
         const { dropoffLocation } = this.props
@@ -43,6 +55,12 @@ export class SearchBox extends Component {
             : ""
     }
 
+    getLawyerDisplayText = location => {
+        return location
+            ? location.name || location.address || `${location.latitude},${location.longitude}`
+            : ""
+    }
+
     render() {
         const dropoffText = this.getLocationDisplayText(this.props.dropoffLocation)
         const pickupText = this.getLocationDisplayText(this.props.pickupLocation)
@@ -53,7 +71,7 @@ export class SearchBox extends Component {
                         <Icon name="search" size={15} color="green" />
                         <Input
                             style={styles.inputSearch}
-                            placeholder="Choose pick-up location"
+                            placeholder="Where are you?"
                             value={pickupText}
                             onFocus={this.choosePickupLocation}
                         />
@@ -62,9 +80,9 @@ export class SearchBox extends Component {
                         <Icon name="search" size={15} color="orangered" />
                         <Input
                             style={styles.inputSearch}
-                            placeholder="Choose drop-off location"
+                            placeholder="Choose Lawyer Type"
                             value={dropoffText}
-                            onFocus={this.chooseDropoffLocation}
+                        // onFocus={this.chooseLawyerType}
                         />
                     </InputGroup>
                 </View>

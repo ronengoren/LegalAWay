@@ -14,7 +14,8 @@ const styles = {
     },
     headerText: {
         color: "#fff",
-        fontSize: 14
+        fontSize: 12,
+        paddingBottom: 20
     }
 }
 export default class AppHeader extends Component {
@@ -34,7 +35,7 @@ export default class AppHeader extends Component {
                         <Image resizeMode="contain" source={this.props.logo} />
                     </Title>
                     {this.props.driverOnTheWay ? (
-                        <Subtitle style={styles.headerText}>Your driver on the way</Subtitle>
+                        <Subtitle style={styles.headerText}>Your Lawyer on the way.</Subtitle>
                     ) : null}
                 </Body>
                 <Right style={{ flex: 1 }}>

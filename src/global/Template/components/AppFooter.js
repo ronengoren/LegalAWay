@@ -55,7 +55,7 @@ export default class AppFooter extends Component {
 
     render() {
         return (
-            <Footer>
+            <Footer >
                 <FooterTab style={styles.footerContainer}>
                     {taxiTypes.map(type => this.renderTab(type))}
                 </FooterTab>
