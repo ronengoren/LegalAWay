@@ -1,7 +1,7 @@
 "use strict"
 
 import React, { Component } from "react"
-import { Button, Label } from "native-base"
+import { Button, Label, Text } from "native-base"
 import { PropTypes } from "prop-types"
 import styles from "./styles"
 
@@ -17,7 +17,7 @@ export default class Booking extends Component {
     }
     return (
       <Button style={style} disabled={this.props.bookingDisabled} onPress={this.onButtonPress}>
-        <Label style={styles.text}>GET A LAWYER NOW</Label>
+        <Label style={styles.text}>GET A LAWYER <Text style={styles.now}>NOW</Text></Label>
       </Button>
       // <Button style={style} onPress={this.onButtonPress}>
       //   <Label style={styles.text}>GET A LAWYER NOW</Label>

@@ -33,7 +33,7 @@ function handleSetPickupLocation(state, action) {
     const dropoffLocation = state.dropoffLocation
 
     // As we will not integrate with any server so ,
-    // just random some drivers when users set pickup
+    // just random some lawyers when users set pickup
     const randomLawyerCount = Math.round(Math.random() * 20)
     const lawyers = []
     for (let i = 0; i < randomLawyerCount; i++) {

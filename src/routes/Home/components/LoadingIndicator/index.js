@@ -39,7 +39,7 @@ export default class LoadingIndicator extends Component {
                     style={styles.spinner}
                     isVisible
                     size={150}
-                    type="WanderingCubes"
+                    type="9CubeGrid"
                     color="#FFFFFF"
                 />
                 <Text style={styles.text}>{message + messagePostfix}</Text>

@@ -10,7 +10,7 @@ import { lawyerTypes } from "../../../global"
 
 const styles = {
     footerContainer: {
-        marginTop: 20,
+        // marginTop: 10,
         backgroundColor: "#fff"
     },
     type: {

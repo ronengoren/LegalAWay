@@ -29,11 +29,21 @@ const styles = {
     },
     text: {
         fontSize: 12,
-        color: "#fff"
+        color: "#fff",
+        fontWeight: "bold",
+        alignItems: "center",
+        justifyContent: "center",
+        // position: "absolute",
+        flexWrap: "wrap",
+        textAlign: 'center', // <-- the magic
+
     },
     amount: {
         fontWeight: "bold",
         fontSize: 12
+    },
+    now: {
+        color: "yellow"
     }
 }
 
