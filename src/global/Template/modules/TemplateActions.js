@@ -1,10 +1,10 @@
 "use strict"
 
-export const SET_SELECTED_TAXI_TYPE = "SET_SELECTED_TAXI_TYPE"
+export const SET_SELECTED_LAWYER_TYPE = "SET_SELECTED_LAWYER_TYPE"
 
-export function setSelectedTaxiTypeAction(taxiType) {
+export function setSelectedLawyerTypeAction(lawyerType) {
     return {
-        type: SET_SELECTED_TAXI_TYPE,
-        payload: taxiType
+        type: SET_SELECTED_LAWYER_TYPE,
+        payload: lawyerType
     }
 }

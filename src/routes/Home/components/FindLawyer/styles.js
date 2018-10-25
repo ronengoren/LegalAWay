@@ -3,7 +3,7 @@
 import { StyleSheet, Dimensions } from "react-native"
 const { width } = Dimensions.get("window")
 const styles = {
-    findDriverContainer: {
+    findLawyerContainer: {
         flex: 1,
         backgroundColor: "#262626",
         justifyContent: "space-between",
@@ -13,7 +13,7 @@ const styles = {
         color: "white",
         fontSize: 18,
         marginBottom: 25,
-        marginTop: 15
+        marginTop: 35
     },
     locationIcon: {
         color: "#fff",

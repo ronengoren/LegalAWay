@@ -34,7 +34,7 @@ export default class AppHeader extends Component {
                     <Title>
                         <Image resizeMode="contain" source={this.props.logo} />
                     </Title>
-                    {this.props.driverOnTheWay ? (
+                    {this.props.lawyerOnTheWay ? (
                         <Subtitle style={styles.headerText}>Your Lawyer on the way.</Subtitle>
                     ) : null}
                 </Body>
@@ -50,7 +50,7 @@ export default class AppHeader extends Component {
 
 AppHeader.propTypes = {
     logo: PropTypes.number.isRequired,
-    driverOnTheWay: PropTypes.bool.isRequired,
+    lawyerOnTheWay: PropTypes.bool.isRequired,
     appStillLoading: PropTypes.bool.isRequired,
     bookingInProgress: PropTypes.bool.isRequired
 }

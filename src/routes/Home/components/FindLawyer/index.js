@@ -7,19 +7,19 @@ import styles from "./styles"
 import Icon from "react-native-vector-icons/FontAwesome"
 import Spinner from "react-native-spinkit"
 
-export default class FindDriver extends Component {
+export default class FindLawyer extends Component {
     getLocationAsName = location =>
         location.name || location.address || `${location.latitude},${location.longitude}`
 
-    onCancelPress = () => this.props.cancelBookingTaxi()
+    onCancelPress = () => this.props.cancelBookingLawyer()
 
     render() {
         const { bookingRecord } = this.props
         return (
-            <View style={styles.findDriverContainer}>
+            <View style={styles.findLawyerContainer}>
                 <View style={styles.contentTop}>
                     <Label style={styles.text}>
-                        Connecting with nearby {bookingRecord.taxiType.type} drivers
+                        Connecting with nearby {bookingRecord.lawyerType.type} lawyers
           </Label>
                     <Icon style={styles.locationIcon} name="map-marker" />
                     <Label style={styles.pickupText}>
@@ -45,7 +45,7 @@ export default class FindDriver extends Component {
     }
 }
 
-FindDriver.propTypes = {
+FindLawyer.propTypes = {
     bookingRecord: PropTypes.shape({
         pickupLocation: PropTypes.shape({
             name: PropTypes.string,
@@ -60,7 +60,7 @@ FindDriver.propTypes = {
             longitude: PropTypes.number.isRequired
         }),
         status: PropTypes.string.isRequired,
-        taxiType: PropTypes.shape({
+        lawyerType: PropTypes.shape({
             type: PropTypes.string.isRequired
         }).isRequired
     }).isRequired

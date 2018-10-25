@@ -7,7 +7,7 @@ import styles from "./styles"
 
 export default class Booking extends Component {
   onButtonPress = () => {
-    this.props.bookTaxi()
+    this.props.bookLawyer()
   }
 
   render() {
@@ -17,13 +17,16 @@ export default class Booking extends Component {
     }
     return (
       <Button style={style} disabled={this.props.bookingDisabled} onPress={this.onButtonPress}>
-        <Label style={styles.text}>Book</Label>
+        <Label style={styles.text}>GET A LAWYER NOW</Label>
       </Button>
+      // <Button style={style} onPress={this.onButtonPress}>
+      //   <Label style={styles.text}>GET A LAWYER NOW</Label>
+      // </Button>
     )
   }
 }
 
 Booking.propTypes = {
-  bookTaxi: PropTypes.func.isRequired,
+  bookLawyer: PropTypes.func,
   bookingDisabled: PropTypes.bool.isRequired
 }

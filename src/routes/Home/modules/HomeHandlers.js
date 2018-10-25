@@ -5,16 +5,15 @@ import {
     SET_PICK_UP_LOCATION,
     SET_DROP_OFF_LOCATION,
     SET_FARE_STRUCTURE,
-    BOOK_TAXI_REQUEST,
-    GET_INPUT
+    BOOK_LAWYER_REQUEST
 } from "./HomeActions"
-import { getRegionFromCoordinates, taxiTypes } from "../../../global"
+import { getRegionFromCoordinates, lawyerTypes } from "../../../global"
 
 export const actionHandlers = {
     SET_PICK_UP_LOCATION: handleSetPickupLocation,
     SET_DROP_OFF_LOCATION: handleSetDropLocation,
     SET_FARE_STRUCTURE: handleSetFareStructure,
-    BOOK_TAXI_REQUEST: handleBookTaxiRequest,
+    BOOK_LAWYER_REQUEST: handlebookLawyerRequest,
     GET_INPUT: handleGetInput
 }
 
@@ -35,13 +34,13 @@ function handleSetPickupLocation(state, action) {
 
     // As we will not integrate with any server so ,
     // just random some drivers when users set pickup
-    const randomDriverCount = Math.round(Math.random() * 20)
-    const drivers = []
-    for (let i = 0; i < randomDriverCount; i++) {
-        const randomTaxiType = Math.round(Math.random() * 1000) % taxiTypes.length
-        drivers.push({
+    const randomLawyerCount = Math.round(Math.random() * 20)
+    const lawyers = []
+    for (let i = 0; i < randomLawyerCount; i++) {
+        const randomLawyerType = Math.round(Math.random() * 1000) % lawyerTypes.length
+        lawyers.push({
             id: i,
-            taxiType: taxiTypes[randomTaxiType].type,
+            lawyerType: lawyerTypes[randomLawyerType].type,
             latitude: pickupLocation.latitude + (Math.random() - Math.random()) / 50,
             longitude: pickupLocation.longitude + (Math.random() - Math.random()) / 50
         })
@@ -54,8 +53,8 @@ function handleSetPickupLocation(state, action) {
         mapRegion: {
             $set: getRegionFromCoordinates([pickupLocation, dropoffLocation])
         },
-        drivers: {
-            $set: drivers
+        lawyers: {
+            $set: lawyers
         }
     })
 }
@@ -81,7 +80,9 @@ function handleSetFareStructure(state, action) {
     })
 }
 
-function handleBookTaxiRequest(state, action) {
+
+
+function handlebookLawyerRequest(state, action) {
     return update(state, {
         bookingRecord: {
             $set: action.payload

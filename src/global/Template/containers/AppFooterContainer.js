@@ -2,15 +2,15 @@
 
 import { connect } from "react-redux"
 import AppFooter from "../components/AppFooter"
-import { setSelectedTaxiTypeAction } from "../modules/TemplateActions"
+import { setSelectedLawyerTypeAction } from "../modules/TemplateActions"
 
 const mapStateToProps = state => ({
-  selectedTaxiType: state.template.selectedTaxiType,
+  selectedLawyerType: state.template.selectedLawyerType,
   fareStructure: state.home.fareStructure
 })
 
 const mapDispatchToProps = {
-  setSelectedTaxiType: type => setSelectedTaxiTypeAction(type)
+  setSelectedLawyerType: type => setSelectedLawyerTypeAction(type)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AppFooter)

@@ -9,7 +9,7 @@ import { SearchBox } from "../SearchBox"
 import { SearchResults } from "../SearchResults"
 
 import Booking from "../Booking"
-import { isLocationEquals, taxiTypes } from "../../../../global"
+import { isLocationEquals, lawyerTypes } from "../../../../global"
 import Icon from "react-native-vector-icons/MaterialCommunityIcons"
 
 export default class MapContainer extends Component {
@@ -19,8 +19,8 @@ export default class MapContainer extends Component {
 	}
 
 	componentWillMount = () => {
-		// Resolve taxi icon as image for custom marker
-		taxiTypes.forEach(type => {
+		// Resolve lawyer icon as image for custom marker
+		lawyerTypes.forEach(type => {
 			Icon.getImageSource(type.icon, 25, "orangered").then(image =>
 				this.setState({ ...this.state, [type.type]: image })
 			)
@@ -43,20 +43,20 @@ export default class MapContainer extends Component {
 		return <MapView.Marker coordinate={dropoffLocation} pinColor="orangered" />
 	}
 
-	renderDriverMarkers() {
-		const { taxiType } = this.props
-		if (taxiType == null || this.state[taxiType.type] == null) {
+	renderLawyerMarkers() {
+		const { lawyerType } = this.props
+		if (lawyerType == null || this.state[lawyerType.type] == null) {
 			return null
 		}
-		return this.props.drivers
-			.filter(driver => driver.taxiType === taxiType.type)
-			.map(driver => (
-				<MapView.Marker key={driver.id} coordinate={driver} image={this.state[taxiType.type]} />
+		return this.props.lawyers
+			.filter(lawyer => lawyer.lawyerType === lawyerType.type)
+			.map(lawyer => (
+				<MapView.Marker key={lawyer.id} coordinate={lawyer} image={this.state[lawyerType.type]} />
 			))
 	}
 
 	render() {
-		const { pickupLocation, dropoffLocation, taxiType, getInputData } = this.props
+		const { pickupLocation, dropoffLocation, lawyerType, getInputData } = this.props
 		const bookingDisabled =
 			pickupLocation == null ||
 			dropoffLocation == null ||
@@ -69,7 +69,7 @@ export default class MapContainer extends Component {
 					style={styles.map}>
 					{this.renderPickupMarker()}
 					{this.renderDropoffMarker()}
-					{this.renderDriverMarkers()}
+					{this.renderLawyerMarkers()}
 				</MapView>
 				<SearchBox
 					setPickupLocation={this.props.setPickupLocation}
@@ -78,8 +78,9 @@ export default class MapContainer extends Component {
 					dropoffLocation={dropoffLocation}
 				// getInputData={this.getInputData}
 				/>
-				<SearchResults />
-				<Booking bookingDisabled={bookingDisabled} bookTaxi={this.props.bookTaxi} />
+				{/* <SearchResults /> */}
+				<Booking bookingDisabled={bookingDisabled} bookLawyer={this.props.bookLawyer} />
+
 			</Content>
 		)
 	}
@@ -88,7 +89,8 @@ export default class MapContainer extends Component {
 MapContainer.propTypes = {
 	setPickupLocation: PropTypes.func.isRequired,
 	// getInputData: PropTypes.func.object,
-	bookTaxi: PropTypes.func.isRequired,
+	bookLawyer: PropTypes.func.isRequired,
+
 	pickupLocation: PropTypes.object,
 	setDropLocation: PropTypes.func.isRequired,
 	dropoffLocation: PropTypes.object,
@@ -98,19 +100,19 @@ MapContainer.propTypes = {
 		latitudeDelta: PropTypes.number.isRequired,
 		longitudeDelta: PropTypes.number.isRequired
 	}),
-	drivers: PropTypes.arrayOf(
+	lawyers: PropTypes.arrayOf(
 		PropTypes.shape({
-			taxiType: PropTypes.string.isRequired,
+			lawyerType: PropTypes.string.isRequired,
 			latitude: PropTypes.number.isRequired,
 			longitude: PropTypes.number.isRequired
 		})
 	),
-	taxiType: PropTypes.shape({
+	lawyerType: PropTypes.shape({
 		type: PropTypes.string.isRequired,
 		icon: PropTypes.string.isRequired
 	})
 }
 
 MapContainer.defaultProps = {
-	drivers: []
+	lawyers: []
 }

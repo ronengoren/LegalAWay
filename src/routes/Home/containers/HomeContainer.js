@@ -7,8 +7,8 @@ import {
     getCurrentLocation,
     setPickupLocation,
     setDropLocation,
-    bookTaxi,
-    cancelBookingTaxi,
+    bookLawyer,
+    cancelBookingLawyer,
     getInputData
 } from "../modules/HomeActions"
 
@@ -17,8 +17,8 @@ const mapStateToProps = state => ({
     pickupLocation: state.home.pickupLocation,
     dropoffLocation: state.home.dropoffLocation,
     bookingRecord: state.home.bookingRecord,
-    drivers: state.home.drivers,
-    taxiType: state.template.selectedTaxiType,
+    lawyers: state.home.lawyers,
+    lawyerType: state.template.selectedlawyerType,
     inputData: state.home.inputData || {}
 })
 
@@ -26,8 +26,8 @@ const mapDispatchToProps = {
     getCurrentLocation,
     setPickupLocation,
     setDropLocation,
-    bookTaxi,
-    cancelBookingTaxi,
+    bookLawyer,
+    cancelBookingLawyer,
     getInputData
 }
 

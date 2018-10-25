@@ -4,50 +4,37 @@
 import { Toast } from "native-base"
 
 //tab bar items
-export const taxiTypes = [
+export const lawyerTypes = [
     {
         type: "Divorce",
-        title: "4 wheelers",
-        icon: "car",
+        icon: "human-female-girl",
         pricePerKm: 0.1, // $0.1 per km
         standardDurationPerKm: 12 // 0.5 minute per km
     },
     {
         type: "Bankruptcy",
-        title: "7 wheelers",
-        icon: "car-estate",
+        icon: "square-inc-cash",
         pricePerKm: 0.07,
         standardDurationPerKm: 14
     },
     {
         type: "Corporate",
-        title: "BMW, Mec, etc",
-        icon: "car-sports",
+        icon: "factory",
         pricePerKm: 0.2,
         standardDurationPerKm: 12
     },
     {
         type: "Civil Rights",
-        title: "2 wheelers",
-        icon: "motorbike",
+        icon: "human-handsup",
         pricePerKm: 0.04,
         standardDurationPerKm: 12
     },
     {
-        type: "Criminal",
-        title: "2 wheelers",
-        icon: "motorbike",
-        pricePerKm: 0.04,
-        standardDurationPerKm: 12
-    },
-    {
-        type: "DUI/DWI",
-        title: "2 wheelers",
-        icon: "motorbike",
+        type: "More",
+        icon: "briefcase-plus",
         pricePerKm: 0.04,
         standardDurationPerKm: 12
     }
-
 
 ]
 

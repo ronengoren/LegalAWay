@@ -6,10 +6,11 @@ import { Text } from "react-native"
 import { Footer, FooterTab, Button } from "native-base"
 import Icon from "react-native-vector-icons/MaterialCommunityIcons"
 import { isFareStructureEquals } from "../../../global"
-import { taxiTypes } from "../../../global"
+import { lawyerTypes } from "../../../global"
 
 const styles = {
     footerContainer: {
+        marginTop: 20,
         backgroundColor: "#fff"
     },
     type: {
@@ -21,20 +22,20 @@ const styles = {
 }
 
 export default class AppFooter extends Component {
-    onTaxiTypeSelected = taxiType => {
-        if (taxiType.type !== this.props.selectedTaxiType.type) {
-            this.props.setSelectedTaxiType(taxiType)
+    onLawyerTypeSelected = lawyerType => {
+        if (lawyerType.type !== this.props.selectedLawyerType.type) {
+            this.props.setSelectedLawyerType(lawyerType)
         }
     }
 
     componentDidMount() {
-        this.props.setSelectedTaxiType(taxiTypes[0])
+        this.props.setSelectedLawyerType(lawyerTypes[0])
     }
 
     formatTabElement(tabInfo, style = {}) {
         // Clone the styles so that customization will not impacted to template
         const elementStyle = { ...style }
-        const tabIsActive = this.props.selectedTaxiType === tabInfo
+        const tabIsActive = this.props.selectedLawyerType === tabInfo
         elementStyle.color = tabIsActive ? "#262626" : "grey"
 
         return elementStyle
@@ -45,8 +46,8 @@ export default class AppFooter extends Component {
         // are there anyway to pass arguments via onPress event?
         const subTitle = tabInfo.pricing ? `$${tabInfo.pricing}` : tabInfo.title
         return (
-            <Button vertical key={tabInfo.type} onPress={() => this.onTaxiTypeSelected(tabInfo)}>
-                <Icon size={25} name={tabInfo.icon} style={this.formatTabElement(tabInfo)} />
+            <Button vertical key={tabInfo.type} onPress={() => this.onLawyerTypeSelected(tabInfo)}>
+                <Icon size={20} name={tabInfo.icon} style={this.formatTabElement(tabInfo)} />
                 <Text style={this.formatTabElement(tabInfo, styles.type)}>{tabInfo.type}</Text>
                 <Text style={this.formatTabElement(tabInfo, styles.title)}>{subTitle}</Text>
             </Button>
@@ -57,7 +58,7 @@ export default class AppFooter extends Component {
         return (
             <Footer >
                 <FooterTab style={styles.footerContainer}>
-                    {taxiTypes.map(type => this.renderTab(type))}
+                    {lawyerTypes.map(type => this.renderTab(type))}
                 </FooterTab>
             </Footer>
         )
@@ -67,7 +68,7 @@ export default class AppFooter extends Component {
         // Recalculate price when new fare structure is applied.
         const newFare = nextProps.fareStructure
         if (!isFareStructureEquals(this.props.fareStructure, newFare)) {
-            taxiTypes.forEach(type => {
+            lawyerTypes.forEach(type => {
                 // Travel < 5km will be priced as 5 km.
                 const distance = Math.max(3, newFare.distance.value / 1000)
                 const standardDuration = distance * type.standardDurationPerKm
@@ -80,8 +81,8 @@ export default class AppFooter extends Component {
 }
 
 AppFooter.propTypes = {
-    setSelectedTaxiType: PropTypes.func.isRequired,
-    selectedTaxiType: PropTypes.object,
+    setSelectedLawyerType: PropTypes.func.isRequired,
+    selectedLawyerType: PropTypes.object,
     fareStructure: PropTypes.shape({
         distance: PropTypes.shape({
             value: PropTypes.number.isRequired

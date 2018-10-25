@@ -8,7 +8,7 @@ import MapContainer from "./MapContainer"
 import { Container } from "native-base"
 import AppFooter from "../../../global/Template/containers/AppFooterContainer"
 import LoadingIndicator from "./LoadingIndicator"
-import FindDriver from "./FindDriver"
+import FindLawyer from "./FindLawyer"
 
 export default class Home extends Component {
     componentDidMount() {
@@ -30,9 +30,9 @@ export default class Home extends Component {
 
     renderBookingRequest() {
         return (
-            <FindDriver
+            <FindLawyer
                 bookingRecord={this.props.bookingRecord}
-                cancelBookingTaxi={this.props.cancelBookingTaxi}
+                cancelBookingLawyer={this.props.cancelBookingLawyer}
             />
         )
     }
@@ -52,13 +52,13 @@ Home.propTypes = {
     getCurrentLocation: PropTypes.func.isRequired,
     setPickupLocation: PropTypes.func.isRequired,
     setDropLocation: PropTypes.func.isRequired,
-    bookTaxi: PropTypes.func.isRequired,
-    cancelBookingTaxi: PropTypes.func.isRequired,
+    bookLawyer: PropTypes.func.isRequired,
+    cancelBookingLawyer: PropTypes.func.isRequired,
     pickupLocation: PropTypes.object,
     dropoffLocation: PropTypes.object,
     mapRegion: PropTypes.object,
     bookingRecord: PropTypes.object,
-    drivers: PropTypes.array,
-    taxiType: PropTypes.object,
+    lawyers: PropTypes.array,
+    lawyerType: PropTypes.object,
     // getInputData: PropTypes.func.object
 }

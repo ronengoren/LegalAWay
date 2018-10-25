@@ -1,15 +1,15 @@
 "use strict"
 
 import update from "immutability-helper"
-import { SET_SELECTED_TAXI_TYPE } from "./TemplateActions"
+import { SET_SELECTED_LAWYER_TYPE } from "./TemplateActions"
 
 export const actionHandlers = {
-    SET_SELECTED_TAXI_TYPE: handleSetSelectedTaxiType
+    SET_SELECTED_LAWYER_TYPE: handleSetSelectedLawyerType
 }
 
-function handleSetSelectedTaxiType(state, action) {
+function handleSetSelectedLawyerType(state, action) {
     return update(state, {
-        selectedTaxiType: {
+        selectedLawyerType: {
             $set: action.payload
         }
     })

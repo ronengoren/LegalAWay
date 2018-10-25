@@ -6,7 +6,7 @@ const styles = {
         borderWidth: 1,
         height: 70,
         width: 70,
-        borderRadius: 40,
+        borderRadius: 60,
         alignItems: "center",
         justifyContent: "center",
         position: "absolute",
@@ -28,7 +28,7 @@ const styles = {
         backgroundColor: "#262626"
     },
     text: {
-        fontSize: 16,
+        fontSize: 12,
         color: "#fff"
     },
     amount: {

@@ -11,24 +11,18 @@ import { showError } from "../../../../global"
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 
 export class SearchBox extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            selected2: undefined
-        };
-    }
-    onValueChange2(value) {
-        this.setState({
-            selected2: value
-        });
-    }
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         selected2: undefined
+    //     };
+    // }
+    // onValueChange2(value) {
+    //     this.setState({
+    //         selected2: value
+    //     });
+    // }
 
-    handleInput(key, val) {
-        getInputData({
-            key,
-            value: val
-        })
-    }
 
     choosePickupLocation = () => {
         const latLngBounds = {}
@@ -40,15 +34,15 @@ export class SearchBox extends Component {
         this.pickALocation(latLngBounds, this.props.setPickupLocation)
     }
 
-    chooseLawyerType = () => {
-        const latLngBounds = {}
-        const { dropoffLocation } = this.props
-        if (dropoffLocation) {
-            latLngBounds.latitude = dropoffLocation.latitude
-            latLngBounds.longitude = dropoffLocation.longitude
-        }
-        this.pickALocation(latLngBounds, this.props.setDropLocation)
-    }
+    // chooseLawyerType = () => {
+    //     const latLngBounds = {}
+    //     const { dropoffLocation } = this.props
+    //     if (dropoffLocation) {
+    //         latLngBounds.latitude = dropoffLocation.latitude
+    //         latLngBounds.longitude = dropoffLocation.longitude
+    //     }
+    //     this.pickALocation(latLngBounds, this.props.setDropLocation)
+    // }
 
 
 
@@ -64,7 +58,7 @@ export class SearchBox extends Component {
 
     pickALocation(latLngBounds = {}, successCallback) {
         latLngBounds.radius = 0.1
-        RNGooglePlaces.openPlacePickerModal(latLngBounds)
+        RNGooglePlaces.openPlacePickerModal()
             .then(place => successCallback(place))
             .catch(error => showError(error.message))
     }
@@ -75,16 +69,16 @@ export class SearchBox extends Component {
             : ""
     }
 
-    getLawyerDisplayText = input => {
-        return input
-        ""
-    }
+    // getLawyerDisplayText = input => {
+    //     return input
+    //     ""
+    // }
 
 
 
     render() {
-        // const dropoffText = this.getLocationDisplayText(this.props.dropoffLocation)
-        const inputText = this.getLawyerDisplayText(this.props.handleInput)
+        const dropoffText = this.getLocationDisplayText(this.props.dropoffLocation)
+        // const inputText = this.getLawyerDisplayText(this.props.handleInput)
         const pickupText = this.getLocationDisplayText(this.props.pickupLocation)
         return (
             <View style={styles.searchBox}>
@@ -102,19 +96,18 @@ export class SearchBox extends Component {
                         <Icon name="search" size={15} color="orangered" />
                         <Input
                             style={styles.inputSearch}
-                            placeholder="Choose Lawyer Type"
-                        // value={inputText}
-                        // onFocus={this.chooseLawyerType}
-                        // onChangeText={handleInput.bind(this, "lawyer")}
+                            placeholder="Choose Lawyer"
+                            value={dropoffText}
+                            onFocus={this.chooseDropoffLocation}
                         />
-                        <Content>
+                        {/* <Content>
                             <Form>
                                 <Item picker>
                                     <Picker
                                         mode="dropdown"
                                         iosIcon={<Icon name="arrow-down" />}
                                         style={{ width: undefined }}
-                                        placeholder="Select here"
+                                        placeholder="Select laywer type"
                                         placeholderStyle={{ color: "#bfc6ea" }}
                                         placeholderIconColor="#007aff"
                                         selectedValue={this.state.selected2}
@@ -133,7 +126,7 @@ export class SearchBox extends Component {
                                     </Picker>
                                 </Item>
                             </Form>
-                        </Content>
+                        </Content> */}
                     </InputGroup>
 
                 </View>

@@ -6,23 +6,11 @@ import { urls } from "../../../global/urls"
 export const SET_PICK_UP_LOCATION = "SET_PICK_UP_LOCATION"
 export const SET_DROP_OFF_LOCATION = "SET_DROP_OFF_LOCATION"
 export const SET_FARE_STRUCTURE = "SET_FARE_STRUCTURE"
-export const BOOK_TAXI_REQUEST = "BOOK_TAXI_REQUEST"
-export const SET_LAWYER_TYPE = "SET_LAWYER_TYPE"
-export const GET_INPUT = "GET_INPUT"
+export const BOOK_LAWYER_REQUEST = "BOOK_LAWYER_REQUEST"
 
-function setLawyerTypeAction(list) {
-    return {
-        type: SET_LAWYER_TYPE,
-        payload: list
-    }
-}
 
-function getInputData(payload) {
-    return {
-        type: GET_INPUT,
-        payload
-    }
-}
+
+
 
 function setPickupLocationAction(location) {
     return {
@@ -45,12 +33,14 @@ function setFareStructureAction(fare) {
     }
 }
 
-function bookTaxiRequestAction(bookingInfo) {
+function bookLawyerRequestAction(bookingInfo) {
     return {
-        type: BOOK_TAXI_REQUEST,
+        type: BOOK_LAWYER_REQUEST,
         payload: bookingInfo
     }
 }
+
+
 
 function calculateFare() {
     return (dispatch, getState) => {
@@ -100,22 +90,22 @@ export function getCurrentLocation() {
     }
 }
 
-export function bookTaxi() {
+export function bookLawyer() {
     // TODO API call.
     return (dispatch, getState) => {
         const state = getState()
         dispatch(
-            bookTaxiRequestAction({
+            bookLawyerRequestAction({
                 pickupLocation: state.home.pickupLocation,
                 dropoffLocation: state.home.dropoffLocation,
                 status: "pending",
-                taxiType: state.template.selectedTaxiType
+                lawyerType: state.template.selectedLawyerType
             })
         )
     }
 }
 
-export function cancelBookingTaxi() {
+export function cancelBookingLawyer() {
     // TODO API call.
-    return dispatch => dispatch(bookTaxiRequestAction(null))
+    return dispatch => dispatch(bookLawyerRequestAction(null))
 }
